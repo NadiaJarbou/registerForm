@@ -56,6 +56,21 @@ nav {
     color: antiquewhite;
 }
 
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px;
+    -webkit-transition: all 0, 3 ease-in-out;
+    transition: all 0, 3 ease-in-out;
+    background-color: orange;
+}
+
 main {
     grid-area: "main";
 }
@@ -204,7 +219,76 @@ input[type=email] {
     border-radius: 10px;
 }
 
+input[type="checkbox"] {
+    display: none;
+}
+
 select {
     height: 60px;
     border-radius: 10px;
+}
+
+/* Mobile responsive version */
+
+
+@media screen and (max-width: 760px) {
+
+    .first-row {
+        display: grid;
+        grid-template-columns: 1fr;
+        max-width: 100%;
+        justify-items: center;
+    }
+
+    .form-row {
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+        align-items: normal;
+        margin: 20px;
+    }
+
+    .side {
+        display: none;
+    }
+
+    .middle {
+        padding: 30px 100px;
+    }
+
+    .mainmenu {
+        display: flex;
+        flex-flow: column;
+        margin: 0;
+        padding: 0;
+        gap: 15px;
+    }
+
+    header {
+        display: flex;
+        flex-flow: column;
+        align-items: normal;
+    }
+
+    .mobile {
+        display: flex;
+        flex-flow: row;
+        flex: 1;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px;
+    }
+
+    .hamburger {
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    nav {
+        display: none;
+    }
+
+    input[type="checkbox"]:checked+nav {
+        display: block;
+    }
 }
